@@ -13,7 +13,7 @@ namespace ariel {
 class Game {
 
 public:	
-	Game(Player p1, Player p2);	
+	Game(Player player1, Player player2);	
 
 	void playTurn();
 	void printLastTurn();
@@ -24,7 +24,7 @@ public:
 
 
 private:	
-	Player p1, p2;	
+	Player p1_, p2_;	
 
 };
 

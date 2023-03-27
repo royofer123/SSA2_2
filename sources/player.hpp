@@ -17,7 +17,7 @@ public:
         
         Player(string name);//paramater constructor
 
-        ~Player();//destructor
+       // ~Player();//destructor
 
         void setName(string);
 
