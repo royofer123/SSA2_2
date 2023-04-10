@@ -1,26 +1,26 @@
-#ifndef MAIN_CARD_H
-#define MAIN_CARD_H
+#ifndef CARD_HPP
+#define CARD_HPP
 
-#include <iostream>
+#include <string>
 
 using namespace std;
-namespace ariel {};
-using namespace ariel;
-    class Card {
-        int card_number;//1-13
-        string shape;//4 shapes
-        string color;
+namespace ariel{
+
+enum Suit {Heart=1, Diamond, Spade, Club};
+
+class Card{
+    private:
+    int number;
+    Suit suit;
+    string getSuitType();
+    string getFaceCard();
 
     public:
-        Card(int card_number, string shape, string color);//parameter construcor
+    Card();
+    Card(int number, Suit suit);
+    string toString();
+    int getNumber();
 
-        Card();//empty constructor
-
-        //~Card();//destructor
-
-        string toString();
-        int getCard_number();
-        string getShape();
-        int compare(Card other);
-    };
+};
+};
 #endif

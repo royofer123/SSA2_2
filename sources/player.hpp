@@ -1,36 +1,29 @@
-#ifndef PLAYER_H
-#define PLAYER_H
-
-#include <iostream>
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
+#include <string>
+#include <vector>
+#include "card.hpp"
 
 using namespace std;
-namespace ariel {};
-using namespace ariel;
-
-class Player {
-private:     
-     
-public:
-        string name;
+namespace ariel{
+    class Player{
+        private:
+         string name;
+         vector<Card> stack;
+         int numOfWins;
+         int numOfCardTaken;
+         int numOfRounds;
         
-        Player(){};//empty constructor
-        
-        Player(string name);//paramater constructor
-
-       // ~Player();//destructor
-
-        void setName(string);
-
+        public:
+        Player(string name);
+        Card playCard();
+        int stacksize();
+        int cardesTaken();
+        void addRound(int cardsWon);
+        void addCard(Card card);
+        void printStats();
         string getName();
-
-
-        int stacksize(); 
-        int cardesTaken(); 
-        
-
-        string toString();
-        
-
+        string turnStats(Card card);
+    };
 };
-
-#endif
+#endif 
